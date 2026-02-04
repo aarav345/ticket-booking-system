@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2023",
     "module": "ESNext",
-    "lib": ["ES2023"],
+    "lib": ["ES2023", "DOM"],
     "moduleResolution": "node",
     "outDir": "./dist",
     "rootDir": "./src",
@@ -27,7 +27,7 @@
       "@common/*": ["src/common/*"],
       "@modules/*": ["src/modules/*"],
       "@database/*": ["src/database/*"]
-    },
+    },  
     "typeRoots": ["./node_modules/@types", "./src/common/types"],
     "types": ["node"]
   },
