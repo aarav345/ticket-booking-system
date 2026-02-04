@@ -3,11 +3,12 @@ import { Pool } from 'pg';
 
 const pool = new Pool({
   host: 'localhost',
-  port: parseInt(process.env.POSTGRES_PORT ?? '5433'),
+  port: parseInt(process.env.PGBOUNCER_PORT ?? '6433'),
   database: 'ticket_booking',
   user: 'postgres',
   password: process.env.POSTGRES_PASSWORD,
-  max: 20,
+  max: 50,
+  min: 10,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 5000,
 });
