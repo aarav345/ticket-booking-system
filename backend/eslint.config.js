@@ -39,7 +39,6 @@ export default [
             '@typescript-eslint/no-explicit-any': 'warn',
             '@typescript-eslint/no-floating-promises': 'error',
             '@typescript-eslint/consistent-type-imports': 'error',
-            '@typescript-eslint/no-unnecessary-condition': 'warn',
             '@typescript-eslint/prefer-nullish-coalescing': 'warn',
             '@typescript-eslint/prefer-optional-chain': 'warn',
             '@typescript-eslint/no-misused-promises': [
