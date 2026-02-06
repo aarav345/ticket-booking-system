@@ -8,13 +8,14 @@ import { errorHandler } from './common/middlewares/error-handler.middleware';
 import { notFound } from './common/middlewares/notFound.middleware';
 import { requestLogger, logger } from './common/logger/logger';
 import healthRoutes from './health/health.route';
+import routes from './routes/index';
 
 const app: Application = express();
 
 // Trust proxy - important for getting correct IP addresses behind reverse proxies
 app.set('trust proxy', 1);
 
-// Request logging middleware (should be first)
+// Request logging middleware
 app.use(requestLogger);
 
 // Security middlewares
@@ -25,16 +26,19 @@ app.use(cors(corsConfig));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Health check routes (no /api prefix for Kubernetes probes)
+// Health check routes
 app.use('/health', healthRoutes);
 
 // Compression
 app.use(compression());
 
+// API routes
+app.use('/api/v1', routes);
+
 // 404 handler
 app.use(notFound);
 
-// Error handler (must be last)
+// Error handler
 app.use(errorHandler);
 
 // Log application startup

@@ -33,7 +33,7 @@ export const logger = pino({
   // Base fields for all logs
   base: {
     env: process.env.NODE_ENV ?? 'development',
-    service: 'blog-api',
+    service: 'ticket-booking-system-api',
   },
 
   // Serialize errors properly
