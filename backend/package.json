@@ -14,10 +14,7 @@
     "format:check": "prettier --check \"src/**/*.ts\"",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage",
-    "test:unit": "vitest run --testPathPattern=unit",
-    "test:integration": "vitest run --testPathPattern=integration"
+    "test:ui": "vitest --ui"
   },
   "keywords": [
     "express",

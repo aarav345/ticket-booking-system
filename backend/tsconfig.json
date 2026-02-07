@@ -3,7 +3,7 @@
     "target": "ES2023",
     "module": "ESNext",
     "lib": ["ES2023", "DOM"],
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",  // Changed from "node" to "bundler"
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
@@ -19,13 +19,13 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "noEmit": false,  // Ensure this is false so tsc can emit files
     "paths": {
-      "@/*": ["src/*"],
-      "@config/*": ["src/config/*"],
-      "@common/*": ["src/common/*"],
-      "@modules/*": ["src/modules/*"],
-      "@database/*": ["src/database/*"]
+      "@/*": ["./src/*"],
+      "@config/*": ["./src/config/*"],
+      "@common/*": ["./src/common/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@database/*": ["./src/database/*"]
     },  
     "typeRoots": ["./node_modules/@types", "./src/common/types"],
     "types": ["node"]
